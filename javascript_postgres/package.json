@@ -1,0 +1,16 @@
+{
+  "name": "javascript_postgres",
+  "version": "1.0.0",
+  "description": "This is my express project for my javascript postgres",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+    
+  },
+  "author": "Ayushi Pandey",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

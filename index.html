@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cuvette - Job Search</title>
+  
+  
+  <link rel="stylesheet" href="style.css?v=1.0">
+</head>
+<body>
+
+     <nav>
+    <div class="nav-container">
+      <div class="logo">
+        <a href="#">
+          <img src="https://cuvette.tech/app/static/media/logo.06a7ae20.svg" alt="Cuvette">
+        </a>
+      </div>
+      
+      <div class="profile">
+        <img src="https://github.com/sanchitmahajann/cuvette-boilerplate/blob/main/user.png?raw=true" alt="Profile">
+        <span>Ayushi Pandey</span>
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+        </svg>
+      </div>
+    </div>
+  </nav>
+
+  <div class="content">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <nav class="sidebar-nav">
+        <a href="#" class="menu-item menu-item-active">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+          </svg>
+          Fulltime Jobs
+        </a>
+        <a href="#" class="menu-item menu-item-inactive">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/>
+          </svg>
+          Other Jobs
+          <span class="badge">New</span>
+        </a>
+        <a href="#" class="menu-item menu-item-inactive">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+          </svg>
+          Applied
+        </a>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <h1>Job Listings</h1>
+  
+    
+      <div class="search-filter-container">
+          <input type="text" id="search-bar" placeholder="Search by Role / Skills">
+          <select id="sort-by">
+              <option value="date">Sort by (Date) ⬇</option>
+              <option value="salary">Sort by (Salary)</option>
+              <option value="experience">Sort by (Experience)</option>
+          </select>
+      </div>
+  
+      
+      <div class="container">
+          <!-- Job Listings -->
+          <div id="jobs"></div>
+  
+          <!-- Apply Filters -->
+          <aside class="apply-filters">
+              <h2>Apply Filters</h2>
+  
+              <p><strong>Office Type</strong></p>
+              <label><input type="radio" name="office-type"> Remote</label><br>
+              <label><input type="radio" name="office-type"> In-Office</label>
+  
+              <p><strong>Work Experience</strong></p>
+              <select>
+                  <option>Select experience</option>
+                  <option>0-1 years</option>
+                  <option>1-3 years</option>
+                  <option>3+ years</option>
+              </select>
+  
+              <p><strong>Min Salary</strong></p>
+              <input type="range" min="3" max="12" step="1">
+              
+              <div>
+                  <button>Clear</button>
+                  <button style="background: #0000ff; color: #fff;">Apply</button>
+              </div>
+          </aside>
+      </div>
+  </main>
+  
+</body>
+</html>
+
+  
+
+
+    <style>
+      #jobs {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px; 
+    margin: auto;
+}
+
+.job-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border: 1px solid #e1e4e8;
+    transition: 0.3s;
+    width: 100%; 
+}
+
+.job-card img {
+    width: 50px;  
+    height: auto; 
+}
+
+
+.job-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.job-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.company-name {
+    color: gray;
+    font-size: 14px;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+}
+
+.skills span {
+    background-color: #f3f3f3;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.job-info {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.job-info p {
+    font-size: 15px;
+    color: #333;
+    margin: 0;
+    flex: 1;
+    text-align: left;
+    min-width: 150px; 
+}
+
+.job-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.view-details, .apply-now {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.view-details {
+    background-color: #f3f3f3;
+    color: #333;
+}
+
+.apply-now {
+    background-color: #007bff;
+    color: white;
+}
+
+    </style>
+</body>
+</html>
+  
